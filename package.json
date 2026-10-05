@@ -1,0 +1,22 @@
+{
+  "name": "campaigniq-bda-platform",
+  "version": "1.0.0",
+  "description": "CampaignIQ — Automated AI Content Generation & ML Optimization Platform (Netlify Edition)",
+  "main": "public/index.html",
+  "scripts": {
+    "build": "node -e \"console.log('✅ CampaignIQ Netlify Build Complete: Static assets ready in public/')\"",
+    "dev": "npx serve public -p 8080",
+    "start": "npx serve public",
+    "test": "python -m unittest test_pipeline.py"
+  },
+  "keywords": [
+    "big-data-analytics",
+    "machine-learning",
+    "ai-marketing",
+    "gemini-api",
+    "scikit-learn",
+    "netlify"
+  ],
+  "author": "CampaignIQ Engineering Team",
+  "license": "MIT"
+}

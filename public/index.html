@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampaignIQ — Enterprise AI Marketing & Big Data Analytics Platform</title>
+  <meta name="description" content="CampaignIQ: Enterprise Big Data Analytics, Dual-Engine AI Copy Generation, Prescriptive Optimization Tournament & Scalability Architecture.">
+  <meta name="keywords" content="Big Data Analytics, Machine Learning, CampaignIQ, Netlify, Gemini API, Scikit-Learn, Streamlit, Content Optimization">
+  <meta name="theme-color" content="#07090E">
+  
+  <!-- Open Graph Social Cards -->
+  <meta property="og:title" content="CampaignIQ — AI Marketing Intelligence Platform">
+  <meta property="og:description" content="Automated AI Content Generation & ML Optimization Platform deployed on Netlify.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+      <div class="brand-section">
+        <div class="brand-logo-icon">⚡</div>
+        <div class="brand-info">
+          <h1>CampaignIQ</h1>
+          <p>Automated AI Content Generation & ML Optimization Platform</p>
+        </div>
+      </div>
+
+      <div class="nav-badges">
+        <div class="status-badge netlify">
+          <span>▲</span> Netlify Edge: Active
+        </div>
+        <div class="status-badge live-pulse">
+          <div class="dot"></div> Telemetry Live
+        </div>
+        <div class="status-badge">
+          <span>📊</span> ML: Logistic Regression (68.2% Acc, 81.8% Recall)
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav" aria-label="Main Navigation">
+      <button class="tab-btn active" data-tab="tab-overview" id="nav-overview">📊 Executive Overview</button>
+      <button class="tab-btn" data-tab="tab-studio" id="nav-studio">⚡ AI Campaign Studio</button>
+      <button class="tab-btn" data-tab="tab-diagnostics" id="nav-diagnostics">🔬 Model Diagnostics</button>
+      <button class="tab-btn" data-tab="tab-architecture" id="nav-architecture">🏗️ Scalability Architecture</button>
+      <button class="tab-btn" data-tab="tab-roi" id="nav-roi">📈 Business ROI Simulator</button>
+      <button class="tab-btn" data-tab="tab-observability" id="nav-observability">📡 Prometheus Telemetry</button>
+      <button class="tab-btn" data-tab="tab-docs" id="nav-docs">📖 System Docs & Blueprint</button>
+    </nav>
+
+    <!-- ==========================================
+         TAB 1: EXECUTIVE OVERVIEW
+         ========================================== -->
+    <section id="tab-overview" class="tab-content active">
+      <!-- Hero Banner -->
+      <div class="hero-banner">
+        <div class="hero-title">
+          <h2>Enterprise Marketing Intelligence Command Console</h2>
+          <p>Trained on 1,465 authentic Amazon India catalog products, 15 engineered NLP signals, and 10,000 feedback events modeling consumer engagement and brand tone affinity.</p>
+        </div>
+        <div class="hero-stats-tag">
+          <div class="hero-stat-item">
+            <div class="val">1,465</div>
+            <div class="lbl">Catalog Items</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="val">10,000</div>
+            <div class="lbl">Synthesized Logs</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="val">14/14</div>
+            <div class="lbl">Unit Tests Passed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPI Grid -->
+      <div class="kpi-grid">
+        <div class="kpi-card emerald">
+          <div class="kpi-header">
+            <span class="kpi-title">Model Accuracy</span>
+            <span class="kpi-icon">🎯</span>
+          </div>
+          <div class="kpi-value">68.23%</div>
+          <div class="kpi-meta">
+            <span class="badge-lift">+18.2%</span> vs random baseline (50%)
+          </div>
+        </div>
+
+        <div class="kpi-card amber">
+          <div class="kpi-header">
+            <span class="kpi-title">High-Performer Recall</span>
+            <span class="kpi-icon">🔍</span>
+          </div>
+          <div class="kpi-value">81.76%</div>
+          <div class="kpi-meta">
+            <span>Identifies 82% of viral ad copies</span>
+          </div>
+        </div>
+
+        <div class="kpi-card violet">
+          <div class="kpi-header">
+            <span class="kpi-title">Weighted F1-Score</span>
+            <span class="kpi-icon">⚖️</span>
+          </div>
+          <div class="kpi-value">75.11%</div>
+          <div class="kpi-meta">
+            <span>5-Fold Stratified CV (±0.89%)</span>
+          </div>
+        </div>
+
+        <div class="kpi-card cyan">
+          <div class="kpi-header">
+            <span class="kpi-title">Readability Lift</span>
+            <span class="kpi-icon">📖</span>
+          </div>
+          <div class="kpi-value">t = 18.73</div>
+          <div class="kpi-meta">
+            <span>Statistical Significance (p &lt; 10⁻²⁵)</span>
+          </div>
+        </div>
+
+        <div class="kpi-card emerald">
+          <div class="kpi-header">
+            <span class="kpi-title">Optimization Delta</span>
+            <span class="kpi-icon">🚀</span>
+          </div>
+          <div class="kpi-value">+14.2%</div>
+          <div class="kpi-meta">
+            <span>Avg Tournament Approval Lift</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-header">
+            <span class="kpi-title">P95 Inference Latency</span>
+            <span class="kpi-icon">⚡</span>
+          </div>
+          <div class="kpi-value">18ms</div>
+          <div class="kpi-meta">
+            <span>Semantic Cache vs 850ms API</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="grid-2col">
+        <div class="widget-card">
+          <div class="widget-header">
+            <h3><span>📊</span> Algorithm Benchmark Comparison</h3>
+            <span class="sub">5-Fold Stratified Cross-Validation</span>
+          </div>
+          <canvas id="benchmark-chart" height="250" style="width: 100%; height: 250px;"></canvas>
+        </div>
+
+        <div class="widget-card">
+          <div class="widget-header">
+            <h3><span>🏆</span> Top Feature Importances (Quality Drivers)</h3>
+            <span class="sub">Normalized Logistic Regression Weights</span>
+          </div>
+          <canvas id="feature-importance-chart" height="250" style="width: 100%; height: 250px;"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 2: AI CAMPAIGN STUDIO
+         ========================================== -->
+    <section id="tab-studio" class="tab-content">
+      <div class="grid-2col">
+        <!-- Controls Column -->
+        <div class="widget-card">
+          <div class="widget-header">
+            <h3><span>⚙️</span> Campaign Generation Controls</h3>
+            <span class="sub">Select Catalog Product & Parameters</span>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="product-select">Select E-Commerce Product</label>
+            <select id="product-select" class="form-select"></select>
+          </div>
+
+          <!-- Custom Product Input (Hidden by default) -->
+          <div id="custom-product-fields" class="hidden" style="margin-bottom: 14px;">
+            <div class="form-group">
+              <label class="form-label" for="custom-prod-name">Custom Product Name</label>
+              <input type="text" id="custom-prod-name" class="form-control" value="Ultra-Fast 100W GaN Travel Charger">
+            </div>
+          </div>
+
+          <!-- Product Specs Row -->
+          <div class="specs-row">
+            <div class="spec-badge">
+              <div class="num" id="spec-price">₹299</div>
+              <div class="txt">Deal Price</div>
+            </div>
+            <div class="spec-badge">
+              <div class="num" id="spec-actual-price">₹599</div>
+              <div class="txt">MSRP</div>
+            </div>
+            <div class="spec-badge">
+              <div class="num" id="spec-discount">50%</div>
+              <div class="txt">Discount</div>
+            </div>
+            <div class="spec-badge">
+              <div class="num" id="spec-rating">4.2 ★</div>
+              <div class="txt">Rating</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="audience-select">Target Customer Persona</label>
+            <select id="audience-select" class="form-select"></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tone-select">Brand Voice & Tone</label>
+            <select id="tone-select" class="form-select"></select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="channel-select">Distribution Channel</label>
+            <select id="channel-select" class="form-select"></select>
+          </div>
+
+          <!-- Generation Engine Selector -->
+          <label class="form-label">Generation Engine</label>
+          <div class="engine-segmented">
+            <div class="engine-option active" id="engine-local">⚡ Local Fast Engine (Deterministic)</div>
+            <div class="engine-option" id="engine-gemini">✨ Gemini 1.5 Flash AI</div>
+          </div>
+
+          <!-- Gemini Configuration Box -->
+          <div id="gemini-config-box" style="display: none; background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-md); padding: 14px; margin-bottom: 16px;">
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label class="form-label" for="gemini-api-key" style="color: #CBD5E1;">Optional Gemini API Key (Leave empty to use AI Simulation)</label>
+              <input type="password" id="gemini-api-key" class="form-control" placeholder="AIzaSy...">
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <input type="checkbox" id="grounding-toggle" checked style="accent-color: var(--indigo-500);">
+              <label for="grounding-toggle" style="font-size: 12px; color: var(--text-secondary); cursor: pointer;">Enable Google Search Grounding Simulation</label>
+            </div>
+          </div>
+
+          <button id="generate-copy-btn" class="btn-primary">
+            <span>⚡ Generate Campaign Copy</span>
+          </button>
+        </div>
+
+        <!-- Output & Evaluation Column -->
+        <div class="widget-card">
+          <div class="widget-header">
+            <h3><span>📝</span> Real-Time AI Generation & Quality Gate</h3>
+            <span class="sub" id="preview-channel-fit">Optimal Channel Fit</span>
+          </div>
+
+          <!-- Copy Preview Display Box -->
+          <div class="copy-preview-box">
+            <div class="preview-headline" id="preview-headline">Loading campaign headline...</div>
+            <div class="preview-body" id="preview-body">Generating optimized marketing body copy...</div>
+            <div>
+              <span class="preview-cta-tag" id="preview-cta">Shop Deal Now</span>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; font-size: 12px; color: var(--text-muted);">
+            <div>
+              <span>Length: </span><b id="preview-char-count" style="color: #CBD5E1;">0</b> chars (<b id="preview-word-count" style="color: #CBD5E1;">0 words</b>)
+            </div>
+            <button id="copy-clipboard-btn" class="btn-secondary">📋 Copy Ad Text</button>
+          </div>
+
+          <!-- Score Dial & Diagnostic Signals -->
+          <div class="score-dashboard">
+            <div class="score-dial">
+              <svg viewBox="0 0 100 100">
+                <circle class="bg-circle" cx="50" cy="50" r="40" />
+                <circle class="fg-circle" id="score-circle" cx="50" cy="50" r="40" />
+              </svg>
+              <div class="score-dial-val">
+                <div class="num" id="score-num">--</div>
+                <div class="unit">APPROVAL</div>
+              </div>
+            </div>
+
+            <div class="score-details">
+              <div>
+                <span class="score-status-badge approved" id="score-status-badge">EVALUATING</span>
+              </div>
+              <div class="score-diagnostic-list">
+                <div class="diag-item"><span>📖 Reading:</span> <span class="val" id="diag-reading-ease">--</span></div>
+                <div class="diag-item"><span>❤️ Sentiment:</span> <span class="val" id="diag-sentiment">--</span></div>
+                <div class="diag-item"><span>⚡ Urgency:</span> <span class="val" id="diag-urgency">--</span></div>
+                <div class="diag-item"><span>🎯 Action CTA:</span> <span class="val" id="diag-cta">--</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Prescriptive Optimization Tournament Card -->
+          <div class="tournament-card">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <h4 style="font-size: 13.5px; font-weight: 700; color: #FFFFFF;">Prescriptive Optimization Tournament</h4>
+                <p style="font-size: 11.5px; color: var(--text-secondary);">Generates 3 targeted variants to improve approval score</p>
+              </div>
+              <button id="run-tournament-btn" class="btn-emerald">⚡ Run Tournament</button>
+            </div>
+
+            <!-- Tournament Results (Populated dynamically) -->
+            <div id="tournament-results-box" style="display: none; margin-top: 14px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; font-size: 12px; margin-bottom: 6px;">
+                <span style="color: var(--text-muted);">Tournament Verdict:</span>
+                <span id="tournament-delta-lift" class="badge-lift">+0.0% Lift</span>
+              </div>
+              <div id="tournament-candidates-container"></div>
+              <div style="margin-top: 12px; text-align: right;">
+                <button id="adopt-winner-btn" class="btn-primary" style="width: auto; padding: 8px 18px; font-size: 12px;">✅ Adopt Winning Candidate</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 3: MODEL DIAGNOSTICS
+         ========================================== -->
+    <section id="tab-diagnostics" class="tab-content">
+      <div class="widget-card" style="margin-bottom: 24px;">
+        <div class="widget-header">
+          <h3><span>🔬</span> Model Quality Diagnostics & Decision Boundary Analysis</h3>
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <label class="form-label" for="diag-model-select" style="margin: 0;">Benchmark Model:</label>
+            <select id="diag-model-select" class="form-select" style="width: 220px; padding: 6px 12px;">
+              <option value="Logistic Regression">Logistic Regression (Champion)</option>
+              <option value="Random Forest">Random Forest</option>
+              <option value="Gradient Boosting">Gradient Boosting</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="kpi-grid" style="grid-template-columns: repeat(5, 1fr); margin-bottom: 20px;">
+          <div class="kpi-card">
+            <span class="kpi-title">Accuracy</span>
+            <div class="kpi-value" id="diag-acc">68.2%</div>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-title">Precision</span>
+            <div class="kpi-value" id="diag-prec">69.5%</div>
+          </div>
+          <div class="kpi-card emerald">
+            <span class="kpi-title">Recall</span>
+            <div class="kpi-value" id="diag-rec">81.8%</div>
+          </div>
+          <div class="kpi-card violet">
+            <span class="kpi-title">F1-Score</span>
+            <div class="kpi-value" id="diag-f1">75.1%</div>
+          </div>
+          <div class="kpi-card cyan">
+            <span class="kpi-title">ROC-AUC</span>
+            <div class="kpi-value" id="diag-roc">0.7108</div>
+          </div>
+        </div>
+
+        <div class="grid-2col">
+          <!-- Confusion Matrix Grid -->
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+            <h4 style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;">Evaluation Confusion Matrix (1,300 Test Samples)</h4>
+            <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 12px;">Calibrated for consumer 'Thumbs Up' (Approved) vs 'Thumbs Down' (Needs Revision).</p>
+
+            <div class="matrix-container">
+              <div></div>
+              <div style="font-weight: 700; color: var(--text-secondary);">Predicted Down</div>
+              <div style="font-weight: 700; color: var(--text-secondary);">Predicted Up</div>
+
+              <div style="font-weight: 700; color: var(--text-secondary); writing-mode: vertical-rl; transform: rotate(180deg); margin: auto;">Actual Down</div>
+              <div class="matrix-cell tn">
+                <div class="matrix-val" id="cm-tn">264</div>
+                <div class="matrix-lbl">True Negative (49.1%)</div>
+              </div>
+              <div class="matrix-cell fp">
+                <div class="matrix-val" id="cm-fp">274</div>
+                <div class="matrix-lbl">False Positive</div>
+              </div>
+
+              <div style="font-weight: 700; color: var(--text-secondary); writing-mode: vertical-rl; transform: rotate(180deg); margin: auto;">Actual Up</div>
+              <div class="matrix-cell fn">
+                <div class="matrix-val" id="cm-fn">139</div>
+                <div class="matrix-lbl">False Negative</div>
+              </div>
+              <div class="matrix-cell tp">
+                <div class="matrix-val" id="cm-tp">623</div>
+                <div class="matrix-lbl">True Positive (81.8%)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Threshold Simulator -->
+          <div style="background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 18px;">
+            <h4 style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px;">Decision Boundary Threshold Slider</h4>
+            <p style="font-size: 11.5px; color: var(--text-muted); margin-bottom: 16px;">Dynamically adjust the classification probability cutoff from 0.30 to 0.80 to balance Precision vs Recall.</p>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <span>Classification Threshold:</span>
+                <span id="threshold-val" class="slider-val">0.50</span>
+              </div>
+              <input type="range" id="threshold-slider" min="0.30" max="0.80" step="0.05" value="0.50">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px;">
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-md); text-align: center;">
+                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Simulated Precision</div>
+                <div id="thresh-precision" style="font-family: var(--font-mono); font-size: 22px; font-weight: 800; color: var(--emerald-400); margin-top: 4px;">69.5%</div>
+              </div>
+              <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); padding: 14px; border-radius: var(--radius-md); text-align: center;">
+                <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Simulated Recall</div>
+                <div id="thresh-recall" style="font-family: var(--font-mono); font-size: 22px; font-weight: 800; color: var(--indigo-500); margin-top: 4px;">81.8%</div>
+              </div>
+            </div>
+
+            <div style="font-size: 12px; color: var(--text-secondary); margin-top: 18px; line-height: 1.5;">
+              💡 <b>Enterprise Recommendation:</b> Lower threshold (0.45) prioritizes high campaign throughput and volume, while a higher threshold (0.65) ensures only top-tier ad variants reach paid distribution.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 4: SCALABILITY ARCHITECTURE
+         ========================================== -->
+    <section id="tab-architecture" class="tab-content">
+      <div class="grid-2col">
+        <!-- Interactive Sizing Sliders -->
+        <div class="widget-card">
+          <div class="widget-header">
+            <h3><span>🎛️</span> Distributed Scaling Parameters</h3>
+            <span class="sub">Kafka, Spark & Milvus Sizing</span>
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Daily Request Volume:</span>
+              <span id="val-requests" class="slider-val">100,000</span>
+            </div>
+            <input type="range" id="slider-requests" min="10000" max="500000" step="10000" value="100000">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Milvus Semantic Cache Hit Rate:</span>
+              <span id="val-cache" class="slider-val">45%</span>
+            </div>
+            <input type="range" id="slider-cache" min="0" max="90" step="5" value="45">
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-header">
+              <span>Gemini LLM Cost per 1K Tokens:</span>
+              <span id="val-cost" class="slider-val">$0.0015</span>
+            </div>
+            <input type="range" id="slider-cost" min="0.0005" max="0.0050" step="0.0005" value="0.0015">
+          </div>
+
+          <!-- Calculated Scalability Outputs -->
+          <div class="kpi-grid" style="grid-template-columns: repeat(2, 1fr); margin-top: 20px;">
+            <div class="kpi-card emerald">
+              <span class="kpi-title">Daily Savings</span>
+              <div class="kpi-value" id="scale-daily-savings">$30</div>
+            </div>
+            <div class="kpi-card emerald">
+              <span class="kpi-title">Annual Savings</span>
+              <div class="kpi-value" id="scale-annual-savings">$11,091</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-title">Kafka Partitions</span>
+              <div class="kpi-value" id="scale-kafka-partitions">8</div>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-title">Inference Nodes</span>
+              <div class="kpi-value" id="scale-inference-nodes">2</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Cost Curve Chart -->
+        <div class="widget-card">
+          <div class="widget-header">
+            <h3><span>📉</span> LLM Token Cost Curve: Raw vs Semantic Cache</h3>
+            <span class="sub">Empirical Savings Curve as Traffic Scales</span>
+          </div>
+          <canvas id="cost-curve-chart" height="270" style="width: 100%; height: 270px;"></canvas>
+        </div>
+      </div>
+
+      <!-- Distributed Pipeline Diagram -->
+      <div class="widget-card">
+        <div class="widget-header">
+          <h3><span>🏗️</span> Production Scalability Architecture Blueprint</h3>
+          <span class="sub">Decoupled Asynchronous Microservices</span>
+        </div>
+
+        <div class="arch-diagram">
+          <div class="arch-node-group">
+            <div class="arch-node">
+              <div class="icon">🛒</div>
+              <div class="title">Catalog Ingestion</div>
+              <div class="spec">Amazon CSV / REST</div>
+            </div>
+            <div class="arch-arrow">➔</div>
+
+            <div class="arch-node">
+              <div class="icon">📬</div>
+              <div class="title">Apache Kafka</div>
+              <div class="spec">Partitions: 32</div>
+            </div>
+            <div class="arch-arrow">➔</div>
+
+            <div class="arch-node">
+              <div class="icon">⚡</div>
+              <div class="title">Milvus Cache</div>
+              <div class="spec">Cosine Sim ≥ 0.95 (15ms)</div>
+            </div>
+            <div class="arch-arrow">➔</div>
+
+            <div class="arch-node">
+              <div class="icon">✨</div>
+              <div class="title">Ray Inference</div>
+              <div class="spec">Gemini / Local Template</div>
+            </div>
+            <div class="arch-arrow">➔</div>
+
+            <div class="arch-node">
+              <div class="icon">⚖️</div>
+              <div class="title">ML Quality Gate</div>
+              <div class="spec">Scikit-Learn Scorer</div>
+            </div>
+            <div class="arch-arrow">➔</div>
+
+            <div class="arch-node">
+              <div class="icon">📊</div>
+              <div class="title">Delta Lakehouse</div>
+              <div class="spec">Spark Streaming & DPO</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 5: BUSINESS ROI SIMULATOR
+         ========================================== -->
+    <section id="tab-roi" class="tab-content">
+      <div class="widget-card">
+        <div class="widget-header">
+          <h3><span>📈</span> Enterprise Marketing ROI & Revenue Lift Simulator</h3>
+          <span class="sub">Modeled on e-commerce conversion uplift</span>
+        </div>
+
+        <div class="grid-3col">
+          <div style="background: var(--bg-secondary); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <div class="form-group">
+              <label class="form-label" for="roi-ad-spend">Monthly Ad Spend (₹)</label>
+              <input type="number" id="roi-ad-spend" class="form-control" value="500000" step="50000">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="roi-base-ctr">Baseline Click-Through-Rate (CTR %)</label>
+              <input type="number" id="roi-base-ctr" class="form-control" value="2.1" step="0.1">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="roi-aov">Average Order Value (₹)</label>
+              <input type="number" id="roi-aov" class="form-control" value="1200" step="100">
+            </div>
+          </div>
+
+          <div style="background: var(--bg-secondary); padding: 18px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); display: flex; flex-direction: column; justify-content: space-around;">
+            <div>
+              <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Projected CTR Lift with CampaignIQ</div>
+              <div style="font-family: var(--font-mono); font-size: 26px; font-weight: 800; color: var(--emerald-400);">+24.6%</div>
+              <div style="font-size: 11px; color: var(--text-secondary);">From 2.1% to 2.62%</div>
+            </div>
+            <div style="margin-top: 14px;">
+              <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Readability & Tone Synergy Lift</div>
+              <div style="font-family: var(--font-mono); font-size: 26px; font-weight: 800; color: var(--indigo-500);">+14.2%</div>
+              <div style="font-size: 11px; color: var(--text-secondary);">Empirical tournament delta</div>
+            </div>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.08); padding: 18px; border-radius: var(--radius-md); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; flex-direction: column; justify-content: center; text-align: center;">
+            <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase; font-weight: 700;">Estimated Net Monthly Value Created</div>
+            <div style="font-family: var(--font-mono); font-size: 34px; font-weight: 800; color: var(--emerald-400); margin: 8px 0;">₹184,500</div>
+            <div style="font-size: 12px; color: #CBD5E1;">Annualized Impact: <b style="color: #FFFFFF;">₹2,214,000 / yr</b></div>
+            <div style="margin-top: 14px;">
+              <span class="badge-lift" style="font-size: 13px;">3.69x Marketing ROI Multiplier</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 6: PROMETHEUS TELEMETRY
+         ========================================== -->
+    <section id="tab-observability" class="tab-content">
+      <div class="kpi-grid" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="kpi-card emerald">
+          <span class="kpi-title">Total Requests Processed</span>
+          <div class="kpi-value" id="live-req-count">142,850</div>
+          <div class="kpi-meta"><span class="badge-lift">Active Stream</span></div>
+        </div>
+
+        <div class="kpi-card violet">
+          <span class="kpi-title">ML Approval Rate</span>
+          <div class="kpi-value" id="live-approval-rate">77.5%</div>
+          <div class="kpi-meta"><span>Threshold: &ge; 65%</span></div>
+        </div>
+
+        <div class="kpi-card cyan">
+          <span class="kpi-title">Current QPS (Live)</span>
+          <div class="kpi-value" id="live-qps">4.8</div>
+          <div class="kpi-meta"><span>Simulated stream</span></div>
+        </div>
+
+        <div class="kpi-card">
+          <span class="kpi-title">Error Rate</span>
+          <div class="kpi-value">0.00%</div>
+          <div class="kpi-meta"><span class="badge-lift">Zero Dropped Packets</span></div>
+        </div>
+      </div>
+
+      <div class="widget-card">
+        <div class="widget-header">
+          <h3><span>📡</span> Latency Distribution Histogram (Prometheus Metrics)</h3>
+          <span class="sub">P50: 18ms | P90: 85ms | P95: 420ms | P99: 850ms</span>
+        </div>
+        <canvas id="telemetry-chart" height="220" style="width: 100%; height: 220px;"></canvas>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         TAB 7: SYSTEM DOCS & BLUEPRINT
+         ========================================== -->
+    <section id="tab-docs" class="tab-content">
+      <div class="widget-card">
+        <div class="widget-header">
+          <h3><span>📖</span> Big Data Analytics Case Study & Production Blueprint</h3>
+          <span class="sub">Academic Rigor & Technology Specification</span>
+        </div>
+
+        <div style="font-size: 13.5px; color: #CBD5E1; line-height: 1.7;">
+          <h4 style="color: #FFFFFF; font-size: 15px; margin: 14px 0 6px;">1. Project Overview & Empirical Validation</h4>
+          <p>CampaignIQ bridges generative artificial intelligence and high-throughput big data processing. Using real Amazon catalog records, the platform trains a supervised ML quality gate achieving <b>68.23% classification accuracy</b> and <b>81.76% high-performer recall</b> ($t = 18.73, p &lt; 10^{-25}$).</p>
+
+          <h4 style="color: #FFFFFF; font-size: 15px; margin: 18px 0 6px;">2. Netlify Deployment Architecture</h4>
+          <p>This repository is fully configured for continuous deployment on <b>Netlify CDN</b> using static asset publishing (<code>publish = "public"</code>), HTTP security headers, and single-page application fallback routing in <code>netlify.toml</code>. All predictive ML scoring and feature extraction execute in the client's browser with sub-millisecond latency.</p>
+
+          <h4 style="color: #FFFFFF; font-size: 15px; margin: 18px 0 6px;">3. Dual-Engine Generation & Score-Aware Optimization</h4>
+          <p>Marketers can toggle between the <b>Local Deterministic Template Engine</b> (zero latency, zero API costs) and <b>Gemini 1.5 Flash</b> (with Google Search grounding). When copy is generated, our prescriptive tournament generates 3 target candidates and only updates the copy if the candidate strictly improves upon the baseline ML score.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div>
+        <span>⚡ CampaignIQ Platform</span> &bull; <span>Netlify Static Edge Edition</span> &bull; <span>Python ML Engine</span>
+      </div>
+      <div class="footer-links">
+        <a href="#tab-overview" onclick="document.getElementById('nav-overview').click()">Overview</a>
+        <a href="#tab-studio" onclick="document.getElementById('nav-studio').click()">Studio</a>
+        <a href="#tab-architecture" onclick="document.getElementById('nav-architecture').click()">Architecture</a>
+        <a href="#tab-docs" onclick="document.getElementById('nav-docs').click()">Docs</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/ml-engine.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
