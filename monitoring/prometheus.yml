@@ -1,0 +1,12 @@
+# Prometheus Configuration for CampaignIQ Telemetry
+# Scrapes metrics from local CampaignIQ instances or telemetry endpoints
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'campaigniq_telemetry'
+    static_configs:
+      - targets: ['localhost:8000', 'localhost:8501', 'localhost:7860']
+    metrics_path: '/metrics'

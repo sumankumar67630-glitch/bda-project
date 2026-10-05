@@ -1,0 +1,84 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "id": 1,
+      "title": "Total Generation Requests by Engine",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "campaigniq_requests_total",
+          "legendFormat": "{{engine}}",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "id": 2,
+      "title": "Average & p95 Generation Latency (ms)",
+      "type": "timeseries",
+      "targets": [
+        {
+          "expr": "campaigniq_latency_ms_avg",
+          "legendFormat": "Avg Latency (ms)",
+          "refId": "A"
+        },
+        {
+          "expr": "campaigniq_latency_ms_p95",
+          "legendFormat": "p95 Latency (ms)",
+          "refId": "B"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 8 },
+      "id": 3,
+      "title": "Scikit-Learn ML Inference Latency (ms)",
+      "type": "gauge",
+      "targets": [
+        {
+          "expr": "campaigniq_inference_latency_ms_avg",
+          "refId": "A"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 8 },
+      "id": 4,
+      "title": "Error Count",
+      "type": "stat",
+      "targets": [
+        {
+          "expr": "campaigniq_errors_total",
+          "refId": "A"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["campaigniq", "marketing", "telemetry"],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "CampaignIQ — Production Telemetry & Latency Dashboard",
+  "version": 1
+}
