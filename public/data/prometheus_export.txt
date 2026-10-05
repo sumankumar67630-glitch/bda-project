@@ -1,0 +1,22 @@
+# HELP campaigniq_requests_total Total number of content generation requests
+# TYPE campaigniq_requests_total counter
+campaigniq_requests_total{engine="all"} 0
+campaigniq_requests_total{engine="gemini"} 0
+campaigniq_requests_total{engine="local"} 0
+campaigniq_requests_total{engine="fallback"} 0
+
+# HELP campaigniq_errors_total Total generation errors
+# TYPE campaigniq_errors_total counter
+campaigniq_errors_total 0
+
+# HELP campaigniq_latency_ms_avg Average generation latency in milliseconds
+# TYPE campaigniq_latency_ms_avg gauge
+campaigniq_latency_ms_avg 0.0
+
+# HELP campaigniq_latency_ms_p95 95th percentile generation latency in milliseconds
+# TYPE campaigniq_latency_ms_p95 gauge
+campaigniq_latency_ms_p95 0.0
+
+# HELP campaigniq_inference_latency_ms_avg Scikit-Learn ML inference latency in milliseconds
+# TYPE campaigniq_inference_latency_ms_avg gauge
+campaigniq_inference_latency_ms_avg 0.0

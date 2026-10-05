@@ -1,0 +1,337 @@
+{
+  "matrix_tone_cat": {
+    "index": [
+      "Bold & Promotional",
+      "Empathetic & Problem-Solving",
+      "Luxury & Premium",
+      "Playful & Witty",
+      "Professional & Authoritative",
+      "Urgent & Scarcity-Driven"
+    ],
+    "columns": [
+      "Car&Motorbike",
+      "Computers&Accessories",
+      "Electronics",
+      "Health&PersonalCare",
+      "Home&Kitchen",
+      "HomeImprovement",
+      "MusicalInstruments",
+      "OfficeProducts",
+      "Toys&Games"
+    ],
+    "values": [
+      [
+        100.0,
+        81.0,
+        70.4,
+        0.0,
+        72.7,
+        null,
+        100.0,
+        66.7,
+        100.0
+      ],
+      [
+        null,
+        61.4,
+        62.8,
+        100.0,
+        59.1,
+        100.0,
+        60.0,
+        50.0,
+        null
+      ],
+      [
+        100.0,
+        26.1,
+        39.3,
+        null,
+        39.1,
+        0.0,
+        null,
+        27.3,
+        0.0
+      ],
+      [
+        50.0,
+        64.7,
+        73.2,
+        null,
+        63.5,
+        50.0,
+        0.0,
+        69.2,
+        null
+      ],
+      [
+        null,
+        50.2,
+        49.1,
+        100.0,
+        44.2,
+        0.0,
+        50.0,
+        56.2,
+        0.0
+      ],
+      [
+        0.0,
+        67.3,
+        66.0,
+        100.0,
+        65.2,
+        50.0,
+        null,
+        55.0,
+        null
+      ]
+    ]
+  },
+  "matrix_aud_tone": {
+    "index": [
+      "Budget Shoppers & Deal Seekers",
+      "Busy Working Professionals",
+      "College Students & Gen Z",
+      "Fitness & Lifestyle Enthusiasts",
+      "Home & Family Managers",
+      "Tech Enthusiasts & Power Users"
+    ],
+    "columns": [
+      "Bold & Promotional",
+      "Empathetic & Problem-Solving",
+      "Luxury & Premium",
+      "Playful & Witty",
+      "Professional & Authoritative",
+      "Urgent & Scarcity-Driven"
+    ],
+    "values": [
+      [
+        85.5,
+        53.4,
+        23.5,
+        83.8,
+        36.0,
+        82.7
+      ],
+      [
+        68.3,
+        60.2,
+        39.9,
+        50.8,
+        63.0,
+        55.5
+      ],
+      [
+        81.0,
+        55.4,
+        34.4,
+        80.7,
+        36.3,
+        71.7
+      ],
+      [
+        74.3,
+        54.7,
+        41.3,
+        69.4,
+        54.0,
+        67.9
+      ],
+      [
+        74.7,
+        86.7,
+        38.4,
+        65.4,
+        50.8,
+        59.3
+      ],
+      [
+        62.9,
+        50.6,
+        34.7,
+        59.4,
+        44.8,
+        57.9
+      ]
+    ]
+  },
+  "tone_agg": [
+    {
+      "input_tone": "Bold & Promotional",
+      "total_count": 1113,
+      "approval_pct": 74.4
+    },
+    {
+      "input_tone": "Playful & Witty",
+      "total_count": 1061,
+      "approval_pct": 67.9
+    },
+    {
+      "input_tone": "Urgent & Scarcity-Driven",
+      "total_count": 1061,
+      "approval_pct": 65.9
+    },
+    {
+      "input_tone": "Empathetic & Problem-Solving",
+      "total_count": 1076,
+      "approval_pct": 61.0
+    },
+    {
+      "input_tone": "Professional & Authoritative",
+      "total_count": 1066,
+      "approval_pct": 48.0
+    },
+    {
+      "input_tone": "Luxury & Premium",
+      "total_count": 1123,
+      "approval_pct": 35.2
+    }
+  ],
+  "chan_agg": [
+    {
+      "channel": "Amazon Sponsored Ad",
+      "approval_pct": 52.4,
+      "simulated_ctr": 3.8
+    },
+    {
+      "channel": "SMS / WhatsApp Alert",
+      "approval_pct": 53.5,
+      "simulated_ctr": 3.79
+    },
+    {
+      "channel": "Instagram / Facebook Feed Ad",
+      "approval_pct": 59.6,
+      "simulated_ctr": 3.92
+    },
+    {
+      "channel": "Google Search Ad",
+      "approval_pct": 61.1,
+      "simulated_ctr": 3.98
+    },
+    {
+      "channel": "Email Newsletter",
+      "approval_pct": 66.2,
+      "simulated_ctr": 4.06
+    }
+  ],
+  "reasons_pareto": [
+    {
+      "Reason": "Copy Too Wordy & Cluttered for Channel",
+      "Count": 1071,
+      "Percentage": 39.8
+    },
+    {
+      "Reason": "Misaligned with Target Audience Intent",
+      "Count": 536,
+      "Percentage": 19.9
+    },
+    {
+      "Reason": "Poor Readability & Complex Phrasing",
+      "Count": 432,
+      "Percentage": 16.1
+    },
+    {
+      "Reason": "Mismatched Price & Tone (Overly Pretentious for Commodity)",
+      "Count": 259,
+      "Percentage": 9.6
+    },
+    {
+      "Reason": "Lacks Product Features / Technical Specifics",
+      "Count": 182,
+      "Percentage": 6.8
+    },
+    {
+      "Reason": "Missing Clear Discount / Value Offer",
+      "Count": 137,
+      "Percentage": 5.1
+    },
+    {
+      "Reason": "Weak or Absent Call-to-Action",
+      "Count": 45,
+      "Percentage": 1.7
+    },
+    {
+      "Reason": "Tone Too Aggressive / Artificial Urgency",
+      "Count": 28,
+      "Percentage": 1.0
+    }
+  ],
+  "reading_hist": {
+    "bins": [
+      "20-25",
+      "25-30",
+      "30-35",
+      "35-40",
+      "40-45",
+      "45-50",
+      "50-55",
+      "55-60",
+      "60-65",
+      "65-70",
+      "70-75",
+      "75-80",
+      "80-85",
+      "85-90",
+      "90-95",
+      "95-100"
+    ],
+    "up": [
+      112,
+      102,
+      119,
+      100,
+      113,
+      142,
+      320,
+      465,
+      623,
+      720,
+      469,
+      175,
+      66,
+      27,
+      7,
+      1
+    ],
+    "down": [
+      189,
+      210,
+      176,
+      122,
+      79,
+      111,
+      167,
+      260,
+      381,
+      294,
+      189,
+      70,
+      18,
+      14,
+      4,
+      2
+    ]
+  },
+  "sentiment_summary": {
+    "up": {
+      "median": 0.71,
+      "q1": 0.42,
+      "q3": 1.0,
+      "min": -0.42,
+      "max": 1.0
+    },
+    "down": {
+      "median": 0.71,
+      "q1": 0.0,
+      "q3": 0.94,
+      "min": -0.42,
+      "max": 1.0
+    }
+  },
+  "total_campaigns": 6500,
+  "approval_rate": 58.6,
+  "avg_reading_ease": 52.1,
+  "avg_ctr_up": 4.81,
+  "avg_ctr_down": 2.65
+}

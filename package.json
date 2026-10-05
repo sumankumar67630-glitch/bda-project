@@ -4,7 +4,7 @@
   "description": "CampaignIQ — Automated AI Content Generation & ML Optimization Platform (Netlify Edition)",
   "main": "public/index.html",
   "scripts": {
-    "build": "node -e \"console.log('✅ CampaignIQ Netlify Build Complete: Static assets ready in public/')\"",
+    "build": "node scripts/build.js",
     "dev": "npx serve public -p 8080",
     "start": "npx serve public",
     "test": "python -m unittest test_pipeline.py"
