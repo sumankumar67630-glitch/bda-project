@@ -21,46 +21,46 @@
     ],
     "values": [
       [
-        100.0,
-        81.0,
+        100,
+        81,
         70.4,
-        0.0,
+        0,
         72.7,
         null,
-        100.0,
+        100,
         66.7,
-        100.0
+        100
       ],
       [
         null,
         61.4,
         62.8,
-        100.0,
+        100,
         59.1,
-        100.0,
-        60.0,
-        50.0,
+        100,
+        60,
+        50,
         null
       ],
       [
-        100.0,
+        100,
         26.1,
         39.3,
         null,
         39.1,
-        0.0,
+        0,
         null,
         27.3,
-        0.0
+        0
       ],
       [
-        50.0,
+        50,
         64.7,
         73.2,
         null,
         63.5,
-        50.0,
-        0.0,
+        50,
+        0,
         69.2,
         null
       ],
@@ -68,22 +68,22 @@
         null,
         50.2,
         49.1,
-        100.0,
+        100,
         44.2,
-        0.0,
-        50.0,
+        0,
+        50,
         56.2,
-        0.0
+        0
       ],
       [
-        0.0,
+        0,
         67.3,
-        66.0,
-        100.0,
+        66,
+        100,
         65.2,
-        50.0,
+        50,
         null,
-        55.0,
+        55,
         null
       ]
     ]
@@ -111,7 +111,7 @@
         53.4,
         23.5,
         83.8,
-        36.0,
+        36,
         82.7
       ],
       [
@@ -119,11 +119,11 @@
         60.2,
         39.9,
         50.8,
-        63.0,
+        63,
         55.5
       ],
       [
-        81.0,
+        81,
         55.4,
         34.4,
         80.7,
@@ -135,7 +135,7 @@
         54.7,
         41.3,
         69.4,
-        54.0,
+        54,
         67.9
       ],
       [
@@ -175,12 +175,12 @@
     {
       "input_tone": "Empathetic & Problem-Solving",
       "total_count": 1076,
-      "approval_pct": 61.0
+      "approval_pct": 61
     },
     {
       "input_tone": "Professional & Authoritative",
       "total_count": 1066,
-      "approval_pct": 48.0
+      "approval_pct": 48
     },
     {
       "input_tone": "Luxury & Premium",
@@ -254,7 +254,7 @@
     {
       "Reason": "Tone Too Aggressive / Artificial Urgency",
       "Count": 28,
-      "Percentage": 1.0
+      "Percentage": 1
     }
   ],
   "reading_hist": {
@@ -317,21 +317,178 @@
     "up": {
       "median": 0.71,
       "q1": 0.42,
-      "q3": 1.0,
+      "q3": 1,
       "min": -0.42,
-      "max": 1.0
+      "max": 1
     },
     "down": {
       "median": 0.71,
-      "q1": 0.0,
+      "q1": 0,
       "q3": 0.94,
       "min": -0.42,
-      "max": 1.0
+      "max": 1
     }
   },
   "total_campaigns": 6500,
   "approval_rate": 58.6,
   "avg_reading_ease": 52.1,
   "avg_ctr_up": 4.81,
-  "avg_ctr_down": 2.65
+  "avg_ctr_down": 2.65,
+  "tone_category_matrix": {
+    "index": [
+      "Bold & Promotional",
+      "Empathetic & Problem-Solving",
+      "Luxury & Premium",
+      "Playful & Witty",
+      "Professional & Authoritative",
+      "Urgent & Scarcity-Driven"
+    ],
+    "columns": [
+      "Car&Motorbike",
+      "Computers&Accessories",
+      "Electronics",
+      "Health&PersonalCare",
+      "Home&Kitchen",
+      "HomeImprovement",
+      "MusicalInstruments",
+      "OfficeProducts",
+      "Toys&Games"
+    ],
+    "values": [
+      [
+        100,
+        81,
+        70.4,
+        0,
+        72.7,
+        null,
+        100,
+        66.7,
+        100
+      ],
+      [
+        null,
+        61.4,
+        62.8,
+        100,
+        59.1,
+        100,
+        60,
+        50,
+        null
+      ],
+      [
+        100,
+        26.1,
+        39.3,
+        null,
+        39.1,
+        0,
+        null,
+        27.3,
+        0
+      ],
+      [
+        50,
+        64.7,
+        73.2,
+        null,
+        63.5,
+        50,
+        0,
+        69.2,
+        null
+      ],
+      [
+        null,
+        50.2,
+        49.1,
+        100,
+        44.2,
+        0,
+        50,
+        56.2,
+        0
+      ],
+      [
+        0,
+        67.3,
+        66,
+        100,
+        65.2,
+        50,
+        null,
+        55,
+        null
+      ]
+    ]
+  },
+  "aud_tone_matrix": {
+    "index": [
+      "Budget Shoppers & Deal Seekers",
+      "Busy Working Professionals",
+      "College Students & Gen Z",
+      "Fitness & Lifestyle Enthusiasts",
+      "Home & Family Managers",
+      "Tech Enthusiasts & Power Users"
+    ],
+    "columns": [
+      "Bold & Promotional",
+      "Empathetic & Problem-Solving",
+      "Luxury & Premium",
+      "Playful & Witty",
+      "Professional & Authoritative",
+      "Urgent & Scarcity-Driven"
+    ],
+    "values": [
+      [
+        85.5,
+        53.4,
+        23.5,
+        83.8,
+        36,
+        82.7
+      ],
+      [
+        68.3,
+        60.2,
+        39.9,
+        50.8,
+        63,
+        55.5
+      ],
+      [
+        81,
+        55.4,
+        34.4,
+        80.7,
+        36.3,
+        71.7
+      ],
+      [
+        74.3,
+        54.7,
+        41.3,
+        69.4,
+        54,
+        67.9
+      ],
+      [
+        74.7,
+        86.7,
+        38.4,
+        65.4,
+        50.8,
+        59.3
+      ],
+      [
+        62.9,
+        50.6,
+        34.7,
+        59.4,
+        44.8,
+        57.9
+      ]
+    ]
+  }
 }

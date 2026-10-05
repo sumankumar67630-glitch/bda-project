@@ -22,7 +22,9 @@ const requiredFiles = [
   'data/catalog.json',
   'data/campaign_logs_sample.json',
   'data/analytics_data.json',
-  'data/prometheus_export.txt'
+  'data/prometheus_export.txt',
+  'data/model_metadata.json',
+  'data/client_model_params.json'
 ];
 
 // Check essential files

@@ -1,0 +1,174 @@
+{
+  "best_model": "Logistic Regression",
+  "evaluation_results": {
+    "Logistic Regression": {
+      "cv_f1_mean": 0.7338,
+      "cv_f1_std": 0.0089,
+      "test_accuracy": 0.6823,
+      "test_precision": 0.6945,
+      "test_recall": 0.8176,
+      "test_f1": 0.7511,
+      "test_roc_auc": 0.7108,
+      "confusion_matrix": [
+        [
+          264,
+          274
+        ],
+        [
+          139,
+          623
+        ]
+      ]
+    },
+    "Random Forest": {
+      "cv_f1_mean": 0.7494,
+      "cv_f1_std": 0.0073,
+      "test_accuracy": 0.6685,
+      "test_precision": 0.6837,
+      "test_recall": 0.8084,
+      "test_f1": 0.7408,
+      "test_roc_auc": 0.7163,
+      "confusion_matrix": [
+        [
+          253,
+          285
+        ],
+        [
+          146,
+          616
+        ]
+      ]
+    },
+    "Gradient Boosting": {
+      "cv_f1_mean": 0.7428,
+      "cv_f1_std": 0.0059,
+      "test_accuracy": 0.6677,
+      "test_precision": 0.6875,
+      "test_recall": 0.794,
+      "test_f1": 0.7369,
+      "test_roc_auc": 0.7207,
+      "confusion_matrix": [
+        [
+          263,
+          275
+        ],
+        [
+          157,
+          605
+        ]
+      ]
+    }
+  },
+  "feature_importances_top20": [
+    {
+      "feature": "input_tone_Luxury & Premium",
+      "importance": 0.62733
+    },
+    {
+      "feature": "char_count",
+      "importance": 0.59308
+    },
+    {
+      "feature": "word_count",
+      "importance": 0.37777
+    },
+    {
+      "feature": "input_tone_Bold & Promotional",
+      "importance": 0.36763
+    },
+    {
+      "feature": "channel_fit_penalty",
+      "importance": 0.2968
+    },
+    {
+      "feature": "input_target_audience_Home & Family Managers",
+      "importance": 0.28345
+    },
+    {
+      "feature": "input_target_audience_Tech Enthusiasts & Power Users",
+      "importance": 0.28261
+    },
+    {
+      "feature": "channel_Email Newsletter",
+      "importance": 0.23595
+    },
+    {
+      "feature": "input_tone_Urgent & Scarcity-Driven",
+      "importance": 0.21682
+    },
+    {
+      "feature": "has_cta",
+      "importance": 0.20722
+    },
+    {
+      "feature": "reading_ease",
+      "importance": 0.19703
+    },
+    {
+      "feature": "category_Home&Kitchen",
+      "importance": 0.18662
+    },
+    {
+      "feature": "channel_Instagram / Facebook Feed Ad",
+      "importance": 0.14525
+    },
+    {
+      "feature": "input_target_audience_Budget Shoppers & Deal Seekers",
+      "importance": 0.14423
+    },
+    {
+      "feature": "category_Electronics",
+      "importance": 0.13666
+    },
+    {
+      "feature": "category_OfficeProducts",
+      "importance": 0.1281
+    },
+    {
+      "feature": "category_Health&PersonalCare",
+      "importance": 0.11336
+    },
+    {
+      "feature": "spec_density",
+      "importance": 0.11197
+    },
+    {
+      "feature": "has_emoji",
+      "importance": 0.10812
+    },
+    {
+      "feature": "input_tone_Empathetic & Problem-Solving",
+      "importance": 0.10667
+    }
+  ],
+  "categorical_features": [
+    "category",
+    "input_tone",
+    "input_target_audience",
+    "channel"
+  ],
+  "numerical_features": [
+    "discounted_price",
+    "actual_price",
+    "discount_percentage",
+    "product_rating",
+    "char_count",
+    "word_count",
+    "sentence_count",
+    "reading_ease",
+    "sentiment_score",
+    "has_urgency",
+    "urgency_intensity",
+    "has_cta",
+    "has_discount_callout",
+    "spec_density",
+    "has_emoji",
+    "emoji_count",
+    "exclamation_count",
+    "question_count",
+    "lexical_diversity",
+    "channel_fit_penalty"
+  ],
+  "total_training_samples": 5200,
+  "total_test_samples": 1300
+}

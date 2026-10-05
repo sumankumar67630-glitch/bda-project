@@ -462,8 +462,8 @@ class MLEngine {
   }
 
   recommendOptimalParameters(product, channel = 'Instagram / Facebook Feed Ad') {
-    const tones = (typeof TONES !== 'undefined' ? TONES : (window.TONES || []));
-    const audiences = (typeof AUDIENCES !== 'undefined' ? AUDIENCES : (window.AUDIENCES || []));
+    const tones = (typeof TONES !== 'undefined' ? TONES : (typeof window !== 'undefined' && window.TONES ? window.TONES : []));
+    const audiences = (typeof AUDIENCES !== 'undefined' ? AUDIENCES : (typeof window !== 'undefined' && window.AUDIENCES ? window.AUDIENCES : []));
     const combos = [];
     const matrixGrid = [];
 

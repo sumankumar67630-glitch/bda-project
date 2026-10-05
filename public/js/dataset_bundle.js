@@ -523,6 +523,11 @@ window.MODEL_METADATA = {
   "total_test_samples": 1300
 };
 
+if (typeof window !== 'undefined' && window.ANALYTICS_DATA) {
+  window.ANALYTICS_DATA.tone_category_matrix = window.ANALYTICS_DATA.matrix_tone_cat;
+  window.ANALYTICS_DATA.aud_tone_matrix = window.ANALYTICS_DATA.matrix_aud_tone;
+}
+
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
     CATALOG_DATA: window.CATALOG_DATA,

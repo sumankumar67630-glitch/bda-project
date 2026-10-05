@@ -78,10 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
     initRoiSimulator();
     initPrometheusTelemetry();
 
-    // Trigger initial charts after DOM settles
+    // Trigger initial charts after DOM settles with multi-stage rendering
     setTimeout(() => {
       renderModuleCharts(state.activeModule);
-    }, 120);
+    }, 60);
+
+    setTimeout(() => {
+      renderModuleCharts(state.activeModule);
+    }, 250);
+
+    // Font loading observer to ensure accurate canvas typography
+    if (typeof document !== 'undefined' && document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => {
+        renderModuleCharts(state.activeModule);
+      }).catch(() => {});
+    }
+
+    // Debounced window resize handler so all charts adapt smoothly
+    window.addEventListener('resize', debounce(() => {
+      renderModuleCharts(state.activeModule);
+    }, 150));
   }
 
   // =========================================================================
@@ -173,29 +189,84 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderModuleCharts(moduleId) {
     if (!window.chartEngine) return;
 
-    if (moduleId === 'module-overview') {
-      window.chartEngine.renderToneVolumeAndApproval('tone-chart', window.ANALYTICS_DATA?.tone_agg);
-      window.chartEngine.renderChannelApproval('channel-chart', window.ANALYTICS_DATA?.chan_agg);
-    } else if (moduleId === 'module-analytics') {
-      window.chartEngine.renderHeatmap('heatmap-tone-cat', window.ANALYTICS_DATA?.tone_category_matrix, 'YlGnBu');
-      window.chartEngine.renderHeatmap('heatmap-aud-tone', window.ANALYTICS_DATA?.aud_tone_matrix, 'Viridis');
-      window.chartEngine.renderReadingEaseHistogram('reading-ease-chart', window.ANALYTICS_DATA?.reading_hist);
-      window.chartEngine.renderRootCausesPareto('pareto-chart', window.ANALYTICS_DATA?.reasons_pareto);
-    } else if (moduleId === 'module-personas') {
-      runPersonaRecommenderSimulation();
-    } else if (moduleId === 'module-ml') {
-      window.chartEngine.renderBenchmarkChart('benchmark-chart');
-      window.chartEngine.renderFeatureImportanceChart('feature-importance-chart');
-    } else if (moduleId === 'module-architecture') {
-      window.chartEngine.renderCostCurveChart(
-        'cost-curve-chart',
-        state.scalability.dailyRequests,
-        state.scalability.cacheHitRate,
-        state.scalability.costPer1kTokens
-      );
-    } else if (moduleId === 'module-telemetry') {
-      window.chartEngine.renderTelemetryLatencyChart('telemetry-chart');
-    }
+    // Use requestAnimationFrame + slight delay so the browser layout reflows from display:none to display:block
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        try {
+          if (moduleId === 'module-overview') {
+            try {
+              window.chartEngine.renderToneVolumeAndApproval('tone-chart', window.ANALYTICS_DATA?.tone_agg);
+            } catch (err) {
+              console.error('Error rendering tone-chart:', err);
+            }
+            try {
+              window.chartEngine.renderChannelApproval('channel-chart', window.ANALYTICS_DATA?.chan_agg);
+            } catch (err) {
+              console.error('Error rendering channel-chart:', err);
+            }
+          } else if (moduleId === 'module-analytics') {
+            const toneCatMatrix = window.ANALYTICS_DATA?.tone_category_matrix || window.ANALYTICS_DATA?.matrix_tone_cat;
+            const audToneMatrix = window.ANALYTICS_DATA?.aud_tone_matrix || window.ANALYTICS_DATA?.matrix_aud_tone;
+            try {
+              window.chartEngine.renderHeatmap('heatmap-tone-cat', toneCatMatrix, 'YlGnBu');
+            } catch (err) {
+              console.error('Error rendering heatmap-tone-cat:', err);
+            }
+            try {
+              window.chartEngine.renderHeatmap('heatmap-aud-tone', audToneMatrix, 'Viridis');
+            } catch (err) {
+              console.error('Error rendering heatmap-aud-tone:', err);
+            }
+            try {
+              window.chartEngine.renderReadingEaseHistogram('reading-ease-chart', window.ANALYTICS_DATA?.reading_hist);
+            } catch (err) {
+              console.error('Error rendering reading-ease-chart:', err);
+            }
+            try {
+              window.chartEngine.renderRootCausesPareto('pareto-chart', window.ANALYTICS_DATA?.reasons_pareto);
+            } catch (err) {
+              console.error('Error rendering pareto-chart:', err);
+            }
+          } else if (moduleId === 'module-personas') {
+            try {
+              runPersonaRecommenderSimulation();
+            } catch (err) {
+              console.error('Error in runPersonaRecommenderSimulation:', err);
+            }
+          } else if (moduleId === 'module-ml') {
+            try {
+              window.chartEngine.renderBenchmarkChart('benchmark-chart');
+            } catch (err) {
+              console.error('Error rendering benchmark-chart:', err);
+            }
+            try {
+              window.chartEngine.renderFeatureImportanceChart('feature-importance-chart');
+            } catch (err) {
+              console.error('Error rendering feature-importance-chart:', err);
+            }
+          } else if (moduleId === 'module-architecture') {
+            try {
+              window.chartEngine.renderCostCurveChart(
+                'cost-curve-chart',
+                state.scalability.dailyRequests,
+                state.scalability.cacheHitRate,
+                state.scalability.costPer1kTokens
+              );
+            } catch (err) {
+              console.error('Error rendering cost-curve-chart:', err);
+            }
+          } else if (moduleId === 'module-telemetry') {
+            try {
+              window.chartEngine.renderTelemetryLatencyChart('telemetry-chart');
+            } catch (err) {
+              console.error('Error rendering telemetry-chart:', err);
+            }
+          }
+        } catch (globalChartErr) {
+          console.error('Global renderModuleCharts error for', moduleId, globalChartErr);
+        }
+      }, 40);
+    });
   }
 
   // =========================================================================
@@ -568,55 +639,60 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function runPersonaRecommenderSimulation() {
-    const prod = state.personaProduct;
-    if (!prod || !window.mlEngine) return;
+    try {
+      const prod = state.personaProduct || (window.CATALOG_DATA ? (window.CATALOG_DATA[2] || window.CATALOG_DATA[0]) : null) || (typeof PRODUCTS !== 'undefined' ? PRODUCTS[0] : null);
+      if (!prod || !window.mlEngine) return;
 
-    const price = Math.round(prod.discounted_price_num || prod.discounted_price || 299);
-    const disc = Math.round(prod.discount_percentage_num || prod.discount_percentage || 50);
-    const cat = prod.main_category || prod.category || 'Electronics';
+      const price = Math.round(prod.discounted_price_num || prod.discounted_price || 299);
+      const disc = Math.round(prod.discount_percentage_num || prod.discount_percentage || 50);
+      const cat = prod.main_category || prod.category || 'Electronics';
 
-    const pPrice = document.getElementById('persona-spec-price');
-    const pDisc = document.getElementById('persona-spec-discount');
-    const pCat = document.getElementById('persona-spec-category');
+      const pPrice = document.getElementById('persona-spec-price');
+      const pDisc = document.getElementById('persona-spec-discount');
+      const pCat = document.getElementById('persona-spec-category');
 
-    if (pPrice) pPrice.textContent = `₹${price.toLocaleString()}`;
-    if (pDisc) pDisc.textContent = `${disc}% OFF`;
-    if (pCat) pCat.textContent = cat;
+      if (pPrice) pPrice.textContent = `₹${price.toLocaleString()}`;
+      if (pDisc) pDisc.textContent = `${disc}% OFF`;
+      if (pCat) pCat.textContent = cat;
 
-    // Simulate 36 Tone x Audience combinations
-    const recResult = window.mlEngine.recommendOptimalParameters(prod, 'Instagram / Facebook Feed Ad');
+      // Simulate 36 Tone x Audience combinations
+      const recResult = window.mlEngine.recommendOptimalParameters(prod, 'Instagram / Facebook Feed Ad');
+      if (!recResult) return;
 
-    // Populate Top 5 Cards
-    const container = document.getElementById('persona-top5-container');
-    if (container && recResult.top5) {
-      container.innerHTML = recResult.top5.map((item, idx) => `
-        <div class="studio-box" style="margin-bottom: 0; padding: 12px 16px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
-            <div>
-              <div style="font-size: 13px; font-weight: 700; color: #FFFFFF;">
-                <span style="color: var(--emerald-400);">#${idx + 1} Tone:</span> ${item.Tone}
+      // Populate Top 5 Cards
+      const container = document.getElementById('persona-top5-container');
+      if (container && recResult.top5) {
+        container.innerHTML = recResult.top5.map((item, idx) => `
+          <div class="studio-box" style="margin-bottom: 0; padding: 12px 16px;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 13px; font-weight: 700; color: #FFFFFF;">
+                  <span style="color: var(--emerald-400);">#${idx + 1} Tone:</span> ${item.Tone}
+                </div>
+                <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                  Target Persona: <b style="color: #CBD5E1;">${item.TargetAudience}</b>
+                </div>
               </div>
-              <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
-                Target Persona: <b style="color: #CBD5E1;">${item.TargetAudience}</b>
+              <div style="text-align: right;">
+                <span style="font-family: var(--font-mono); font-size: 20px; font-weight: 800; color: var(--emerald-400);">${item.PredictedScore}%</span>
+                <div style="font-size: 10px; color: #64748B;">Predicted Approval</div>
               </div>
-            </div>
-            <div style="text-align: right;">
-              <span style="font-family: var(--font-mono); font-size: 20px; font-weight: 800; color: var(--emerald-400);">${item.PredictedScore}%</span>
-              <div style="font-size: 10px; color: #64748B;">Predicted Approval</div>
             </div>
           </div>
-        </div>
-      `).join('');
-    }
+        `).join('');
+      }
 
-    // Render 6x6 Heatmap
-    if (recResult.matrix) {
-      const matrixData = {
-        index: recResult.matrix.tones,
-        columns: recResult.matrix.audiences,
-        values: recResult.matrix.values
-      };
-      window.chartEngine.renderHeatmap('persona-heatmap-canvas', matrixData, 'Greens');
+      // Render 6x6 Heatmap
+      if (recResult.matrix && window.chartEngine) {
+        const matrixData = {
+          index: recResult.matrix.tones,
+          columns: recResult.matrix.audiences,
+          values: recResult.matrix.values
+        };
+        window.chartEngine.renderHeatmap('persona-heatmap-canvas', matrixData, 'Greens');
+      }
+    } catch (simErr) {
+      console.error('Error running persona simulation:', simErr);
     }
   }
 

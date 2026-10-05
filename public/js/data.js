@@ -659,6 +659,9 @@ const ANALYTICS_DATA = {
   "avg_ctr_down": 2.65
 };
 
+ANALYTICS_DATA.tone_category_matrix = ANALYTICS_DATA.matrix_tone_cat;
+ANALYTICS_DATA.aud_tone_matrix = ANALYTICS_DATA.matrix_aud_tone;
+
 const MODEL_METADATA = {
   "best_model": "Logistic Regression",
   "evaluation_results": {
@@ -1516,6 +1519,20 @@ if (typeof window !== 'undefined') {
   window.LEXICONS = LEXICONS;
   window.CLIENT_MODEL_PARAMS = CLIENT_MODEL_PARAMS;
   if (!window.ANALYTICS_DATA) window.ANALYTICS_DATA = ANALYTICS_DATA;
+  if (window.ANALYTICS_DATA) {
+    if (!window.ANALYTICS_DATA.tone_category_matrix && window.ANALYTICS_DATA.matrix_tone_cat) {
+      window.ANALYTICS_DATA.tone_category_matrix = window.ANALYTICS_DATA.matrix_tone_cat;
+    }
+    if (!window.ANALYTICS_DATA.matrix_tone_cat && window.ANALYTICS_DATA.tone_category_matrix) {
+      window.ANALYTICS_DATA.matrix_tone_cat = window.ANALYTICS_DATA.tone_category_matrix;
+    }
+    if (!window.ANALYTICS_DATA.aud_tone_matrix && window.ANALYTICS_DATA.matrix_aud_tone) {
+      window.ANALYTICS_DATA.aud_tone_matrix = window.ANALYTICS_DATA.matrix_aud_tone;
+    }
+    if (!window.ANALYTICS_DATA.matrix_aud_tone && window.ANALYTICS_DATA.aud_tone_matrix) {
+      window.ANALYTICS_DATA.matrix_aud_tone = window.ANALYTICS_DATA.aud_tone_matrix;
+    }
+  }
   if (!window.MODEL_METADATA) window.MODEL_METADATA = MODEL_METADATA;
   if (!window.PROMETHEUS_METRICS) window.PROMETHEUS_METRICS = PROMETHEUS_RAW_TEXT;
   if (!window.CATALOG_DATA || window.CATALOG_DATA.length === 0) window.CATALOG_DATA = INITIAL_CATALOG;
